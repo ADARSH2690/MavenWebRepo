@@ -54,7 +54,7 @@ pipeline {
 			  steps {
 					bat 'docker build --tag=mymavenwebapp-2507 .'
 					bat 'docker tag mymavenwebapp-2507 adarsh2602/test100:mymavenwebapp-2507-v1'
-					bat 'docker login -u 'adarsh2602' -p 'Ambition@88' docker.io'
+					bat 'docker login'
 					bat 'docker push adarsh2602/test100:mymavenwebapp-2507-v1'
 			  
                     }
