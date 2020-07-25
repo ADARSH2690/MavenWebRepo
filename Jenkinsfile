@@ -46,8 +46,7 @@ pipeline {
             {
 			steps {
              sleep(time:5,unit:"SECONDS")
-             bat '${tomcatBin}\\catalina.bat start'
-			 sleep(time:100,unit:"SECONDS")
+             bat 'mvn tomcat7:run'
                   }	
              }				  
 				 
