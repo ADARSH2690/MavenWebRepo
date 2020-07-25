@@ -42,12 +42,9 @@ pipeline {
 			     }
 				 
 		   }
-        stage ("Start Tomcat Server")
+        stage ("Deployed OK")
             {
-			steps {
-             sleep(time:5,unit:"SECONDS")
-             bat 'mvn tomcat7:run'
-                  }	
+			echo "Deployment Done"
              }				  
 				 
 	}
