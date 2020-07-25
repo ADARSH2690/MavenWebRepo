@@ -46,6 +46,20 @@
      <target>1.8</target>
     </configuration>
    </plugin>
+    
+   <plugin>
+	<groupId>org.apache.tomcat.maven</groupId>
+	<artifactId>tomcat7-maven-plugin</artifactId>
+	<version>2.2</version>
+	<configuration>
+		<url>http://localhost:9090/manager/html</url>
+		<username>admin</username>
+        <password>admin</password>
+		<server>TomcatServer</server>
+		<path>/SampleWebApplication</path>
+	</configuration>
+   </plugin>
+    
   </plugins>
  </build>
 </project>
