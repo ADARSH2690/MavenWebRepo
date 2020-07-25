@@ -1,4 +1,3 @@
-
 def tomcatWeb = 'C:\\Users\\Adarsh\\apache-tomcat-7.0.105\\webapps'
 def tomcatBin = 'C:\\Users\\Adarsh\\apache-tomcat-7.0.105\\bin'
 
@@ -39,7 +38,7 @@ pipeline {
 		stage ("DEPLOY to Tomcat")
 		   { 
 		   steps {
-		       bat 'copy target\\SampleWebApplication.war \"${tomcatWeb}\\SampleWebApplication.war\"'
+		       bat 'mvn tomcat7:deploy'
 			     }
 				 
 		   }
