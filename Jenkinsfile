@@ -1,11 +1,28 @@
+
+def tomcatWeb = 'C:\\Users\\Adarsh\\apache-tomcat-7.0.105\\webapps'
+def tomcatBin = 'C:\\Users\\Adarsh\\apache-tomcat-7.0.105\\bin'
+
 pipeline {
+
     agent any
+
     tools {
-        
         maven 'apache-maven-3.6.3'
-    }
+		  }
+		  
     stages {
-        stage ("VERSION")
+	
+	      stage ("Print variable") 
+		  {
+           steps {
+              echo "My tomcatWebvariable is ${tomcatWeb}"
+			  echo "My tomcatBinvariable is ${tomcatBin}"
+                }
+		  }
+	
+	
+	
+	    stage ("VERSION")
 		   {
 		   steps {
 		      bat 'mvn --version'
@@ -18,5 +35,22 @@ pipeline {
 			  bat 'mvn clean package'
 			     }    
 		   }
+		   
+		stage ("DEPLOY to Tomcat")
+		   { 
+		   steps {
+		       bat 'copy target\\SampleWebApplication.war \"${tomcatWeb}\\SampleWebApplication.war\"'
+			     }
+				 
 		   }
-    }
+        stage ("Start Tomcat Server")
+            {
+			steps {
+             sleep(time:5,unit:"SECONDS")
+             bat '${tomcatBin}\\catalina.bat start'
+			 sleep(time:100,unit:"SECONDS")
+                  }	
+             }				  
+				 
+	}
+}
