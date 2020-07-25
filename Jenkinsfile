@@ -38,7 +38,7 @@ pipeline {
 		stage ("DEPLOY to Tomcat")
 		   { 
 		   steps {
-		       bat 'mvn tomcat:deploy'
+		       bat 'mvn tomcat7:deploy'
 			     }
 				 
 		   }
