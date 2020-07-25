@@ -1,5 +1,5 @@
-def tomcatWeb = 'C:\\Users\Adarsh\\apache-tomcat-7.0.105\\webapps'
-def tomcatBin = 'C:\\Users\Adarsh\\apache-tomcat-7.0.105\\bin'
+def tomcatWeb = 'C:\\Users\\Adarsh\\apache-tomcat-7.0.105\\webapps'
+def tomcatBin = 'C:\\Users\\Adarsh\\apache-tomcat-7.0.105\\bin'
 
 pipeline {
 
