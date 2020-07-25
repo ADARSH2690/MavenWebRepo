@@ -56,6 +56,7 @@
 		<username>admin</username>
         <password>admin</password>
 		<server>TomcatServer</server>
+		<update>true</update>
 		<path>/SampleWebApplication</path>
 	</configuration>
    </plugin>
