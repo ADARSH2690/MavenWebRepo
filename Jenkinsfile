@@ -42,10 +42,13 @@ pipeline {
 			     }
 				 
 		   }
-        stage ("Deployed OK")
-            {
-			echo "Deployment Done"
-             }				  
+        stage ("Deployment Done") 
+		  {
+           steps {
+              echo "Deploy OK"
+			  
+                }
+		  }				  
 				 
 	}
 }
