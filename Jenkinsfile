@@ -38,7 +38,7 @@ pipeline {
 		stage ("DEPLOY to Tomcat")
 		   { 
 		   steps {
-		       bat 'mvn tomcat7:deploy'
+		       bat 'mvn tomcat:deploy'
 			     }
 				 
 		   }
@@ -48,7 +48,19 @@ pipeline {
               echo "Deploy OK"
 			  
                 }
-		  }				  
+		  }	
+		  stage ("Docker Lifecycle")
+			{
+			  steps {
+					bat 'docker build --tag=mymavenwebapp-2507 .'
+					bat 'docker tag mymavenwebapp-2507 adarsh2602/test100:mymavenwebapp-2507-v1'
+					bat 'docker login -u 'adarsh2602' -p 'Ambition@88' docker.io'
+					bat 'docker push adarsh2602/test100:mymavenwebapp-2507-v1'
+			  
+                    }
+			
+			
+			}
 				 
 	}
 }
