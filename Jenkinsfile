@@ -8,14 +8,14 @@ pipeline {
         stage ("VERSION")
 		   {
 		   steps {
-		      sh 'mvn --version'
+		      bat 'mvn --version'
 			     }
 		   }
 		   
 		stage ("Clean and package")
            {
 		   steps {
-			  sh 'mvn clean package'
+			  bat 'mvn clean package'
 			     }    
 		   }
 		   }
